@@ -33,7 +33,10 @@ while true
         % it has crossed the left wall of the board. OR if the x value of the 
         % ball + the ball radius is greater than or equal to the boardwith, it 
         % has crossed the right wall of the board
-        ballvelocity = [0,0]; %stop the ball (round has ended, one player gets a point
+        ballvelocity = [0,0]; %stop the ball (round has ended, one player gets a point)
+         if ~inbounds_paddleAx && ~inbounds_paddleAy && ballvelocity(1) < 0
+        score_playerB = score_playerB + 1; 
+        ballposition = ballposition_start; 
 
     elseif ballposition(2) - ballradius<=0 || ballposition(2) + ballradius >= boardheight
         %if the y value of the ball - its radius is less than or equal to
